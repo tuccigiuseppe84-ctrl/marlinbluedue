@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marlin Blue</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="it">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marlin Blue | Il Re dell'Oceano</title>
+    <style>
+        /* --- VARIABILI MARLIN BLUE --- */
+        :root {
+            --marlin-deep: #001a33;       
+            --marlin-main: #2C5282;       
+            --marlin-light: #4299E1;      
+            --marlin-accent: #63B3ED;     
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --text-silver: #E2E8F0;
+        }
+
+        /* --- RESET & BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth; /* Rende il click sui bottoni fluido */
+        }
+
+        body {
+            background-color: var(--marlin-deep);
+            background: radial-gradient(circle at top right, #1A365D, var(--marlin-deep));
+            color: var(--text-silver);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            padding: 1.2rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 26, 51, 0.9);
+            backdrop-filter: blur(15px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .logo span { color: var(--marlin-light); }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-silver);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--marlin-light); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #ffffff, var(--marlin-light));
+            
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        /* --- SEZIONI & GRID --- */
+        .section-title {
+            text-align: center;
+            padding-top: 100px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem 10% 5rem 10%;
+        }
+
+        /* --- MARLIN CARD --- */
+        .marlin-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .marlin-card::before {
+            content: "";
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(66, 153, 225, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .marlin-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--marlin-light);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(66, 153, 225, 0.2);
+        }
+
+        .marlin-card h3 {
+            color: var(--marlin-light);
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            border-left: 4px solid var(--marlin-light);
+            padding-left: 15px;
+        }
+
+        .marlin-card ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .marlin-card ul li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .marlin-card ul li::before {
+            content: "▹";
+            color: var(--marlin-light);
+            margin-right: 8px;
+        }
+
+        /* --- BOTTONI --- */
+        .marlin-btn {
+            background: linear-gradient(135deg, var(--marlin-main), var(--marlin-light));
+            color: white;
+            border: none;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .marlin-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(66, 153, 225, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 4rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .container { padding: 2rem 5%; }
+        }
+    </style>
+     
+
+
+<body>
+
+
+
+
+    <nav>
+        <div class="logo">MARLIN<span>BLUE</span></div>
+        <ul class="nav-links">
+            <li><a href="#home"    >Home</a></li>
+            <li><a href="#biologia" >Biologia</a></li>
+            <li><a href="#curiosita">Curiosità</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>Marlin Blue</h1>
+        
+        <h2>
+        <img src="images.webp" alt="images.webp">
+        <h2>il Blue Marlin,spesso definito il re degli oceani.</h2>
+
+        </h2>
+        
+       
+
+    </section>
+
+    <h2 class="section-title" id="biologia">Scheda Biologica</h2>
+    <div class="container">
+        <!-- Habitat -->
+        <div class="marlin-card">
+            <h3>Habitat</h3>
+            <p>Vive nelle acque tropicali e temperate degli oceani Atlantico e Indiano. È una specie pelagica che ama le correnti calde e gli spazi aperti.</p><img src="IMG-20260501-WA0015.jpg" alt="IMG-20260501-WA0015.jpg">
+
+        </div>
+
+        <!-- Alimentazione -->
+        <div class="marlin-card">
+            <h3>Cosa mangia</h3><img src="IMG-20260501-WA0010(1).jpg" alt="IMG-20260501-WA0010(1).jpg">
+            <p>È un predatore d'élite. La sua dieta include:</p>
+            <ul>
+                <li>Sgombri e Tonnetti</li>
+                <li>Calamari giganti</li>
+                <li>Pesce spada giovanili</li>
+                <li>Crostacei pelagici</li>
+            </ul>
+        </div>
+        <!-- Profondità -->
+        <div class="marlin-card">
+            <h3>Profondità</h3><img src="IMG-20260501-WA0016.jpg" alt="IMG-20260501-WA0016.jpg">
+            <p>Predilige le acque superficiali (epipelagiche) per cacciare, ma può immergersi fino a <strong>800 - 1000 metri</strong> di profondità durante le migrazioni.</p>
+        </div>
+    </div
+
+   
+     class="container">
+        <div class="marlin-card">
+            <h3>Velocità Record</h3>
+            <p>Può raggiungere velocità incredibili, fino a <strong>110 km/h</strong>, rendendolo uno dei pesci più veloci del pianeta.</p>
+        </div>
+
+        <div class="marlin-card">
+            <h3>Spada Intelligente</h3>
+            <p>Non usa il rostro per infilzare, ma per "stordire" i banchi di pesci con colpi rapidi e precisi prima di mangiarli.</p>
+        </div>
+
+        <div class="marlin-card">
+            <h3>Dimensioni</h3>
+            <p>Le femmine sono molto più grandi dei maschi e possono superare i <strong>4 metri</strong> di lunghezza e pesare oltre <strong>600 kg</strong>.</p>
+        </div>
+    
+
+    <footer>
+        <p>&copy; 2026 Marlin Blue Design Studio. <br> Creato per celebrare il maestoso signore dei mari.</p>
+    </footer>
+       <img src="IMG-20260501-WA0013.jpg" alt="IMG-20260501-WA0013.jpg">
+       <img src="IMG-20260501-WA0014.jpg" alt="IMG-20260501-WA0014.jpg">
+       <img src="IMG-20260501-WA0015.jpg" alt="IMG-20260501-WA0015.jpg">
+       <img src="IMG-20260501-WA0016.jpg" alt="IMG-20260501-WA0016.jpg">
+       <img src="IMG-20260501-WA0010(1).jpg"alt="IMG-20260501-WA0010(1).jpg">
+      <audio src=autoplay:"Gennady" Tkachenko Papizh Geneviève Cote Awesome Sequel Live improvisation.mp3">Gennady Tkachenko Papizh Geneviève Cote Awesome Sequel Live improvisation.mp3</audio
+</body>
+</html>
+</body>
+</html>
